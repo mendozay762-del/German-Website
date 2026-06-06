@@ -476,6 +476,17 @@ section {
   word-break: break-word;
 }
 
+/* ---------- Calendly booking embed --------------------------------------- */
+.calendly-inline-widget {
+  width: 100%;
+  min-width: 0 !important; /* override Calendly's inline 320px so it can shrink on mobile */
+  margin: 2rem 0 1rem;
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--panel);
+}
+
 /* ---------- Footer -------------------------------------------------------- */
 .footer {
   margin-top: auto;

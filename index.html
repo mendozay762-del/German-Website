@@ -6,6 +6,8 @@
   <title>German de la Cruz — Coaching</title>
   <meta name="description" content="German de la Cruz — coaching, consultations, and one-off training plans." />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Calendly embed styles -->
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
 </head>
 <body>
   <header class="nav">
@@ -30,7 +32,8 @@
       </p>
       <div class="btn-row">
         <a class="btn btn-primary" href="services.html">Explore Services</a>
-        <a class="btn btn-ghost" href="contact.html">Book a Consultation</a>
+        <a class="btn btn-ghost" href="https://calendly.com/germandelacruz02/30min"
+           onclick="Calendly.initPopupWidget({url:'https://calendly.com/germandelacruz02/30min'});return false;">Book a Consultation</a>
       </div>
     </section>
 
@@ -72,7 +75,8 @@
       </div>
 
       <div class="btn-row">
-        <a class="btn btn-primary" href="contact.html">Get Started</a>
+        <a class="btn btn-primary" href="https://calendly.com/germandelacruz02/30min"
+           onclick="Calendly.initPopupWidget({url:'https://calendly.com/germandelacruz02/30min'});return false;">Get Started</a>
       </div>
     </section>
   </main>
@@ -86,5 +90,8 @@
       </span>
     </div>
   </footer>
+
+  <!-- Calendly embed script -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

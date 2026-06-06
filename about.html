@@ -6,6 +6,8 @@
   <title>About — German de la Cruz</title>
   <meta name="description" content="Meet German de la Cruz — online coach for strength, physique transformation, and fat loss. His story, philosophy, and who he helps." />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Calendly embed styles -->
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
 </head>
 <body>
   <header class="nav">
@@ -193,7 +195,8 @@
         </p>
 
         <div class="btn-row">
-          <a class="btn btn-primary" href="contact.html">Book a Consultation</a>
+          <a class="btn btn-primary" href="https://calendly.com/germandelacruz02/30min"
+             onclick="Calendly.initPopupWidget({url:'https://calendly.com/germandelacruz02/30min'});return false;">Book a Consultation</a>
           <a class="btn btn-ghost" href="services.html">View Services</a>
         </div>
       </div>
@@ -209,5 +212,8 @@
       </span>
     </div>
   </footer>
+
+  <!-- Calendly embed script -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
