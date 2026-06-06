@@ -4,13 +4,10 @@ Image assets for the site.
 
 ## Coach photo
 
-The About page (`about.html`) expects the coach photo at:
+The About page (`about.html`) uses the coach photo at:
 
-    images/german.jpg
+    images/DSC03251.jpeg
 
-Recommended: a portrait-orientation JPG (roughly 3:4 ratio), at least
-~800×1067px. Once this file is uploaded, the "Meet Your Coach" photo appears
-automatically — no code changes needed.
-
-If you upload a different filename or format (e.g. `.png`), update the `src`
-in `about.html` to match.
+It's referenced by the `<img>` in the "Meet Your Coach" section and cropped to
+a portrait (3:4) frame. To swap it, replace that file (or upload a new one and
+update the `src` in `about.html` to match the new filename).
