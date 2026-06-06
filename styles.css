@@ -6,15 +6,25 @@
    =========================================================================== */
 
 :root {
-  --bg-1: #0f2027;
-  --bg-2: #203a43;
-  --bg-3: #2c5364;
-  --panel: rgba(255, 255, 255, 0.04);
-  --panel-border: rgba(255, 255, 255, 0.12);
-  --text: #f4f7f9;
-  --muted: rgba(244, 247, 249, 0.72);
-  --accent: #ffb627;
-  --accent-ink: #1a1208;
+  /* ---- Palette: Black / Dark Grey / Pine Green (source of truth) ---- */
+  --ink: #0a0c0b;          /* near-black — page background (top of gradient) */
+  --surface: #0e1110;      /* raised black — mid gradient */
+  --panel: #161a18;        /* dark grey — card / panel base */
+  --panel-hi: #1d2320;     /* dark grey — card hover */
+  --pine: #3fa377;         /* primary accent */
+  --pine-bright: #57c393;  /* hover / brighter pine */
+  --pine-deep: #123026;    /* deep pine — subtle fills, glowing borders */
+  --fog: #f2f5f3;          /* near-white — headings + primary text */
+  --fog-dim: #9aa6a1;      /* muted grey-green — secondary text */
+  --fog-faint: #69736e;    /* faint — small labels, footer */
+
+  /* ---- Semantic aliases (existing rules reference these names) ---- */
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --text: var(--fog);
+  --muted: var(--fog-dim);
+  --accent: var(--pine);
+  --accent-ink: var(--ink);
+
   --radius: 14px;
   --maxw: 1080px;
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
@@ -37,7 +47,9 @@ body {
   flex-direction: column;
   font-family: var(--font);
   color: var(--text);
-  background: linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
+  background:
+    radial-gradient(120% 80% at 50% 8%, rgba(63, 163, 119, 0.1) 0%, transparent 55%),
+    linear-gradient(180deg, var(--ink) 0%, var(--surface) 45%, var(--panel) 130%);
   background-attachment: fixed;
   line-height: 1.6;
 }
@@ -86,8 +98,8 @@ section {
   top: 0;
   z-index: 10;
   backdrop-filter: blur(10px);
-  background: rgba(15, 32, 39, 0.6);
-  border-bottom: 1px solid var(--panel-border);
+  background: rgba(10, 12, 11, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-inner {
@@ -154,14 +166,20 @@ section {
   color: var(--accent-ink);
 }
 
+.btn-primary:hover {
+  background: var(--pine-bright);
+}
+
 .btn-ghost {
   background: transparent;
-  border-color: var(--panel-border);
+  border-color: rgba(255, 255, 255, 0.22);
   color: var(--text);
 }
 
 .btn-ghost:hover {
-  border-color: var(--accent);
+  border-color: var(--pine);
+  color: var(--pine-bright);
+  background: rgba(63, 163, 119, 0.06);
 }
 
 .btn-row {
@@ -213,16 +231,27 @@ section {
 }
 
 .card {
+  position: relative;
   background: var(--panel);
   border: 1px solid var(--panel-border);
   border-radius: var(--radius);
   padding: 1.6rem;
-  transition: transform 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: linear-gradient(90deg, var(--pine), var(--pine-bright));
 }
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent);
+  background: var(--panel-hi);
+  border-color: rgba(63, 163, 119, 0.45);
 }
 
 .card h3 {
@@ -409,7 +438,7 @@ section {
 
 /* Testimonials */
 .testimonials-section {
-  background: rgba(15, 32, 39, 0.4);
+  background: rgba(10, 12, 11, 0.4);
   border-top: 1px solid var(--panel-border);
 }
 
@@ -491,7 +520,7 @@ section {
 .footer {
   margin-top: auto;
   border-top: 1px solid var(--panel-border);
-  background: rgba(15, 32, 39, 0.5);
+  background: rgba(10, 12, 11, 0.5);
 }
 
 .footer-inner {
@@ -503,7 +532,7 @@ section {
   gap: 0.6rem 1.5rem;
   align-items: center;
   justify-content: space-between;
-  color: var(--muted);
+  color: var(--fog-faint);
   font-size: 0.85rem;
 }
 
