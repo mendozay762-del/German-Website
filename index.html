@@ -3,49 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>German de la Cruz</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Helvetica, Arial, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #ffffff;
-      padding: 1.5rem;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 8vw, 6rem);
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      line-height: 1.1;
-    }
-
-    p {
-      margin-top: 1rem;
-      font-size: clamp(1rem, 3vw, 1.5rem);
-      font-weight: 300;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      opacity: 0.85;
-    }
-  </style>
+  <title>German de la Cruz — Coaching</title>
+  <meta name="description" content="German de la Cruz — coaching, consultations, and one-off training plans." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header class="nav">
+    <nav class="nav-inner" aria-label="Primary">
+      <a class="brand" href="index.html">German <span>de la Cruz</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <main>
-    <h1>German de la Cruz</h1>
-    <p>Coaching</p>
+    <section class="hero container">
+      <h1>German de la Cruz</h1>
+      <p class="tagline">Coaching</p>
+      <p class="hero-sub">
+        Personalized coaching, expert consultations, and structured training
+        plans built around your goals. <!-- Placeholder copy — refine with real positioning. -->
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="services.html">Explore Services</a>
+        <a class="btn btn-ghost" href="contact.html">Book a Consultation</a>
+      </div>
+    </section>
+
+    <section class="container">
+      <p class="eyebrow">What I Offer</p>
+      <h2 class="section-title">Three ways to work together</h2>
+      <p class="lead">
+        From one-time advice to fully guided coaching — choose the level of
+        support that fits where you are right now.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Consultations</h3>
+          <p>
+            Focused, à la carte sessions — bloodwork analysis, gut health,
+            macro recommendations, and direct Q&amp;A.
+          </p>
+          <a class="card-link" href="services.html#consultations">Learn more →</a>
+        </article>
+
+        <article class="card">
+          <h3>One-Off Plans</h3>
+          <p>
+            A complete, standalone training program built for you — everything
+            included, no ongoing commitment.
+          </p>
+          <a class="card-link" href="services.html#one-off-plans">Learn more →</a>
+        </article>
+
+        <article class="card">
+          <h3>Lifestyle Coaching</h3>
+          <p>
+            The premium, all-in tier — ongoing, individualized guidance across
+            every part of your training and lifestyle.
+          </p>
+          <a class="card-link" href="services.html#lifestyle-coaching">Learn more →</a>
+        </article>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="contact.html">Get Started</a>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-brand">German de la Cruz — Coaching</span>
+      <span class="disclaimer">
+        Educational coaching services — not medical advice. Consult a qualified
+        professional before making health decisions.
+      </span>
+    </div>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,387 @@
+/* ===========================================================================
+   German de la Cruz — Coaching
+   Shared stylesheet for the static marketing site.
+   No external dependencies; system fonts; mobile-first responsive.
+   Placeholder branding — swap colors/copy/assets when real ones arrive.
+   =========================================================================== */
+
+:root {
+  --bg-1: #0f2027;
+  --bg-2: #203a43;
+  --bg-3: #2c5364;
+  --panel: rgba(255, 255, 255, 0.04);
+  --panel-border: rgba(255, 255, 255, 0.12);
+  --text: #f4f7f9;
+  --muted: rgba(244, 247, 249, 0.72);
+  --accent: #ffb627;
+  --accent-ink: #1a1208;
+  --radius: 14px;
+  --maxw: 1080px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font);
+  color: var(--text);
+  background: linear-gradient(135deg, var(--bg-1), var(--bg-2), var(--bg-3));
+  background-attachment: fixed;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- Layout helpers ------------------------------------------------ */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.section-title {
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin: 0.4rem 0 1rem;
+  line-height: 1.15;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: clamp(1rem, 2.2vw, 1.18rem);
+  max-width: 60ch;
+}
+
+/* ---------- Navigation ---------------------------------------------------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(15, 32, 39, 0.6);
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 0.9rem 1.25rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  font-size: 1.05rem;
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- Buttons ------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--panel-border);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.8rem;
+}
+
+/* ---------- Hero ---------------------------------------------------------- */
+.hero {
+  padding: clamp(4rem, 12vh, 8rem) 0 4rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.6rem, 9vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+}
+
+.hero .tagline {
+  margin-top: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-weight: 300;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 3vw, 1.4rem);
+}
+
+.hero .hero-sub {
+  margin: 1.6rem auto 0;
+  max-width: 56ch;
+  color: var(--muted);
+  font-size: clamp(1rem, 2.4vw, 1.2rem);
+}
+
+.hero .btn-row {
+  justify-content: center;
+}
+
+/* ---------- Cards / grid -------------------------------------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.2rem;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.card .card-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+/* ---------- Service detail blocks ----------------------------------------- */
+.service {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-top: 1.5rem;
+  scroll-margin-top: 90px;
+}
+
+.service h2 {
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  margin-bottom: 0.4rem;
+}
+
+.service .pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  margin-bottom: 0.9rem;
+}
+
+.service ul {
+  margin: 1rem 0 0 1.1rem;
+  color: var(--muted);
+}
+
+.service ul li {
+  margin: 0.4rem 0;
+}
+
+.note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ---------- About --------------------------------------------------------- */
+.prose {
+  max-width: 65ch;
+}
+
+.prose p {
+  color: var(--muted);
+  margin-top: 1rem;
+}
+
+.prose h3 {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+.prose ul {
+  margin: 0.8rem 0 0 1.1rem;
+  color: var(--muted);
+}
+
+.prose ul li {
+  margin: 0.35rem 0;
+}
+
+/* ---------- Forms --------------------------------------------------------- */
+.form {
+  max-width: 540px;
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--panel-border);
+  border-radius: 10px;
+  color: var(--text);
+  padding: 0.75rem 0.9rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.contact-methods .card a {
+  color: var(--accent);
+  font-weight: 600;
+  word-break: break-word;
+}
+
+/* ---------- Footer -------------------------------------------------------- */
+.footer {
+  margin-top: auto;
+  border-top: 1px solid var(--panel-border);
+  background: rgba(15, 32, 39, 0.5);
+}
+
+.footer-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.footer .disclaimer {
+  max-width: 60ch;
+}
+
+.footer .footer-brand {
+  font-weight: 700;
+  color: var(--text);
+}
