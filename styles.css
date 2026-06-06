@@ -311,6 +311,148 @@ section {
   margin: 0.35rem 0;
 }
 
+.prose h2 {
+  margin-top: 2.6rem;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  line-height: 1.2;
+}
+
+/* Reframed credential — experience over certificates */
+.prose .cred-note {
+  margin-top: 1.2rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+  font-style: italic;
+  color: var(--text);
+}
+
+/* Ideal-client list (no bullets, label emphasis) */
+.prose .client-types {
+  list-style: none;
+  margin-left: 0;
+}
+
+.prose .client-types li {
+  margin: 0.85rem 0;
+}
+
+.prose .client-types strong {
+  color: var(--text);
+}
+
+/* About intro: photo placeholder beside opening copy */
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.about-intro-text .lead {
+  margin-top: 1rem;
+  max-width: none;
+}
+
+.about-photo {
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius);
+  border: 1px dashed var(--panel-border);
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 182, 39, 0.12), transparent 60%),
+    var(--panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 720px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-photo {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+/* Featured highlight (the transformation) */
+.highlight {
+  margin-top: 2.5rem;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.6rem 1.8rem;
+}
+
+.highlight .highlight-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.highlight p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+}
+
+.highlight strong {
+  color: var(--text);
+}
+
+/* Chips — specialties & support areas */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+.chip {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(255, 182, 39, 0.1);
+  border: 1px solid var(--panel-border);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+}
+
+/* Testimonials */
+.testimonials-section {
+  background: rgba(15, 32, 39, 0.4);
+  border-top: 1px solid var(--panel-border);
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial .quote {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.testimonial .cite {
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
 /* ---------- Forms --------------------------------------------------------- */
 .form {
   max-width: 540px;
