@@ -6,6 +6,8 @@
   <title>Services — German de la Cruz</title>
   <meta name="description" content="Consultations, one-off training plans, and lifestyle coaching with German de la Cruz." />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Calendly embed styles -->
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
 </head>
 <body>
   <header class="nav">
@@ -82,7 +84,8 @@
       </article>
 
       <div class="btn-row">
-        <a class="btn btn-primary" href="contact.html">Book a Consultation</a>
+        <a class="btn btn-primary" href="https://calendly.com/germandelacruz02/30min"
+           onclick="Calendly.initPopupWidget({url:'https://calendly.com/germandelacruz02/30min'});return false;">Book a Consultation</a>
         <a class="btn btn-ghost" href="about.html">About German</a>
       </div>
     </section>
@@ -97,5 +100,8 @@
       </span>
     </div>
   </footer>
+
+  <!-- Calendly embed script -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
