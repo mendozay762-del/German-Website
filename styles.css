@@ -1,8 +1,8 @@
 /* ===========================================================================
-   German de la Cruz — Coaching
+   De La Cruz Coaching
    Shared stylesheet for the static marketing site.
    No external dependencies; system fonts; mobile-first responsive.
-   Placeholder branding — swap colors/copy/assets when real ones arrive.
+   Palette: black / dark grey / pine green (see :root tokens below).
    =========================================================================== */
 
 :root {
