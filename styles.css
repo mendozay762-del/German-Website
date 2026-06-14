@@ -516,6 +516,26 @@ section {
   background: var(--panel);
 }
 
+/* ---------- Apply form embed (Jotform) ----------------------------------- */
+.apply-form-embed {
+  width: 100%;
+  margin: 2rem 0 1rem;
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.apply-form-embed iframe {
+  display: block;
+  width: 100%;
+}
+
+/* Per-service "Apply" action row inside service cards */
+.service .btn-row {
+  margin-top: 1.5rem;
+}
+
 /* ---------- Footer -------------------------------------------------------- */
 .footer {
   margin-top: auto;
